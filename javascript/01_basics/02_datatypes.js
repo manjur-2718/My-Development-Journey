@@ -7,6 +7,7 @@ let name = "Manjur";
 let age = 20;  // number. iski range around 2^53 hoti hai.
 // iske alawa ek big int bhi hai joh hum bahut kam use karenge
 let isLoggedIn = true;
+let bigNumber = 1684321518218986118n // js automatically makes it bigInt if i write n after number
 
 //null => standalone value hai
 //undefined => abhi tak value assign nhi hui kisi variable ki
