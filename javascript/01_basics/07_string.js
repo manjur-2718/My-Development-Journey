@@ -42,8 +42,26 @@ console.log(gameName.includes("of")); // This will check if the string includes 
 console.log(gameName.startsWith("Call")); // This will check if the string starts with "Call" or not. It will return true or false
 console.log(gameName.endsWith("Duty")); // This will check if the string ends with "Duty" or not. It will return true or false
 
-const newGame = gameName.substring(0,8); // This will give the substring from index 0 to 8 (not including 8)
+const newGame = gameName.substring(0,8); // This will give the substring from index 0 to 8 (not including 8). In substring negative index is not allowed. Hence if we give negative index it will be considered as 0.
 console.log(newGame); // This will print "Call of "
 
 const newGame2 = gameName.slice(-8,10); // This will give the substring from index -4 to 8 (not including 8). In Js negative index means the counting will start from the end of the string. Hence -1 means the last character, -2 means the second last character and so on. Hence -8 means the 8th last character which is "D" and 10 means the 10th character which is "y". Hence it will give the substring from index -8 to 10 (not including 10) which is "Duty"
 console.log(newGame2); 
+
+const user1 = "   Manjur   "; // This is an example of string with white spaces at the start and end. We can remove the white spaces using trim() method.
+console.log(user1); // This will print "   Manjur   "
+console.log(user1.trim()); // This will remove the white spaces at the start and end of the string
+
+
+const url = "https://github.com/manjur%202718/My%20Development%20Journey"; // Browser doesn't understands spaces in url. Hence it automatically converts the spaces to %20. Now we can replace %20 with space using replace() method. But this will only replace the first occurrence of %20. Hence we can use replaceAll() method to replace all occurrences of %20 with -.
+console.log(url.replaceAll("%20", "-")); // This will replace all occurrences of %20 with - and print the url - spaces.
+
+console.log(url.includes("Manjur")); // This will check if the string includes "Manjur" or not. It will return true or false
+
+// ==========================================================================================================================
+
+// I can also convert string in to array using split() method. It will split the string into an array of substrings based on the separator we provide. If we don't provide any separator it will return the whole string as a single element in an array.
+
+const str = "I am a web developer";
+const arr = str.split(" "); // This will split the string into an array of substrings based on the space separator.
+console.log(arr); // This will print ["I", "am", "a", "web", "developer"]
